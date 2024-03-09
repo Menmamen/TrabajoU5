@@ -33,7 +33,8 @@ public class Mano extends Mazo{
     //toString
     @Override
     public String toString() {
-        return "Puntuacion: " + valorMano() + "\tSu mano es: " + mano.toString();
+        return "Puntuacion: " + valorMano() +
+                "\tSu mano es: " + mano.toString();
     }
 
     //Pedir una carta

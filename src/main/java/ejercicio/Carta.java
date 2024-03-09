@@ -16,7 +16,7 @@ public class Carta {
 
     private Palo palo;
 
-    //Constructor
+    //Constructor completo
     public Carta(int num, Palo palo){
         if (num < 1 || num > 13){
             throw new IllegalArgumentException("El número de la carta debe estar entre 1 y 13.");
@@ -24,18 +24,18 @@ public class Carta {
         this.num = num;
         this.palo = palo;
     }
+    //Constructor vacío
     public Carta() {
 
     }
     //getters
-
     public int getNum() {
         return num;
     }
-
     public Palo getPalo() {
         return palo;
     }
+    //setters
     @XmlElement(name = "numero")
     public void setNum(int num) {
         this.num = num;
@@ -44,8 +44,8 @@ public class Carta {
     public void setPalo(Palo palo) {
         this.palo = palo;
     }
-    //Valor de la carta
 
+    //Valor de la carta
     public int getValor(){
         int valor = 0;
         switch (num){
@@ -61,8 +61,8 @@ public class Carta {
         }
         return valor;
     }
-    //Mostrar el numero
 
+    //Mostrar el numero
     public String mostrarNumero(){
         String repr;
         switch (num){
@@ -87,13 +87,7 @@ public class Carta {
     }
     //toSting
     @Override
-    public String toString() {
-        return mostrarNumero() + " - " + palo;
-    }
-
-    @XmlElement(name = "nombre")
-    public String getToString(){
-        return toString();
+    public String toString() { return mostrarNumero() + " - " + palo;
     }
 
 }
